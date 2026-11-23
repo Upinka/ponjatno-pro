@@ -80,14 +80,26 @@ def panels_of(article) -> list[tuple[str, str]]:
         if not line.startswith("## "):
             continue
         title = clean(line[3:])[:64]
-        snippet = ""
+        block: list[str] = []
         for follow in lines[i + 1:]:
             if follow.startswith("#"):
                 break
-            if follow.strip():
-                snippet = clean(follow)
+            if not follow.strip():
+                if block:
+                    break
+                continue
+            block.append(follow.strip())
+            if len(block) >= 6:
                 break
-        # первое предложение как пояснение
+
+        snippet = ""
+        if block and all(b[:2] in ("- ", "* ") for b in block):
+            # список: берём первые два пункта без маркеров
+            items_txt = [clean(b[2:]) for b in block[:2]]
+            snippet = "; ".join(items_txt)
+        elif block:
+            snippet = clean(" ".join(block))
+
         parts = re.split(r"(?<=[.!?])\s+", snippet, maxsplit=1)
         snippet = parts[0][:110] if parts else ""
         pairs.append((title, snippet))
