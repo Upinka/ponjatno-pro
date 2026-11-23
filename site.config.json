@@ -48,6 +48,11 @@
   },
   "verification": {
     "comment": "Файл подтверждения прав кладите в static/root/ — попадёт в корень сайта. Мета-тег — в meta_tags",
-    "meta_tags": []
+    "meta_tags": [
+      {
+        "name": "zen-verification",
+        "content": "ZyfwJwNbWjmeAAkGAT3D7LmwLwJrLqS3e4Y7MMGv2g5P5AhqdmxJvALjzaHzm4EO"
+      }
+    ]
   }
 }
