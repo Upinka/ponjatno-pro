@@ -408,17 +408,23 @@ def build(clean: bool = False) -> None:
         }
         if jsonld["image"] is None:
             jsonld.pop("image")
+        related = [x for x in articles if x.rubric == a.rubric and x.slug != a.slug][:3]
+        related_html = ""
+        if related:
+            related_html = ('<aside class="related"><h2>Читайте также</h2><ul>%s</ul></aside>'
+                            % "".join('<li><a href="%s">%s</a></li>' % (rel(x.url_path), ep(x.title))
+                                      for x in related))
         content = (
             '<article class="post">\n'
             '<h1 class="post__title">%s</h1>\n'
             '<p class="post__meta">%s &middot; %s &middot; %s</p>\n'
-            "%s\n%s\n"
+            "%s\n%s\n%s"
             '<p class="post__back"><a href="%s">&larr; Все статьи рубрики</a></p>\n'
             '</article>\n'
             '<script type="application/ld+json">%s</script>\n'
             % (ep(a.title), human_date(a.date), ep(rubrics[a.rubric]["title"]),
                ep(a.author or cfg["site"]["author"]), cover_block, body_html,
-               rel("/%s/" % a.rubric), json.dumps(jsonld, ensure_ascii=False))
+               related_html, rel("/%s/" % a.rubric), json.dumps(jsonld, ensure_ascii=False))
         )
         out = PUBLIC_DIR / a.rubric / a.slug / "index.html"
         out.parent.mkdir(parents=True, exist_ok=True)
