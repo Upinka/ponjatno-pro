@@ -73,6 +73,7 @@ def main() -> None:
         sys.stdout.reconfigure(encoding="utf-8", errors="replace")
 
     args = sys.argv[1:]
+    out_dir = Path(args[args.index("--out") + 1]) if "--out" in args else OUT
     articles = build.load_articles()
 
     if "--slug" in args:
@@ -88,7 +89,7 @@ def main() -> None:
               "(добавьте флаг в front matter или укажите --slug)")
         return
 
-    OUT.mkdir(parents=True, exist_ok=True)
+    out_dir.mkdir(parents=True, exist_ok=True)
     index_lines = ["# Публикация в Дзене — очередь", ""]
 
     for i, a in enumerate(sorted(selected, key=lambda x: x.date), 1):
@@ -113,12 +114,13 @@ def main() -> None:
         ]
 
         name = "%02d-%s.md" % (i, a.slug)
-        (OUT / name).write_text("\n".join(doc), encoding="utf-8")
+        (out_dir / name).write_text("\n".join(doc), encoding="utf-8")
         index_lines.append("%d. **%s** — `%s`" % (i, a.title, name))
-        print("готово: dzen-manual/" + name)
+        print("готово: %s/%s" % (out_dir.name, name))
 
-    (OUT / "00-очередь.md").write_text("\n".join(index_lines) + "\n", encoding="utf-8")
-    print("индекс: dzen-manual/00-очередь.md")
+    index_name = "00-очередь.md"
+    (out_dir / index_name).write_text("\n".join(index_lines) + "\n", encoding="utf-8")
+    print("индекс: %s/%s" % (out_dir.name, index_name))
 
 
 if __name__ == "__main__":
