@@ -76,6 +76,12 @@ def human_date(dt: datetime) -> str:
     return "%d %s %d" % (dt.day, MONTHS_RU[dt.month - 1], dt.year)
 
 
+def reading_time(md: str) -> int:
+    """Примерное время чтения в минутах (180 слов в минуту)."""
+    words = len(re.sub(r"[#>*_`\[\]()!-]", " ", md).split())
+    return max(1, round(words / 180))
+
+
 def iso_date(dt: datetime) -> str:
     return dt.isoformat()
 
@@ -330,19 +336,31 @@ def page_html(cfg: dict, title: str, description: str, canonical: str,
     )
 
 
+def rubric_title(cfg: dict, slug: str) -> str:
+    for r in cfg["rubrics"]:
+        if r["slug"] == slug:
+            return r["title"]
+    return ""
+
+
 def article_card(a: Article, cfg: dict) -> str:
     cover = ""
     if a.cover:
         cover = '<img class="card__img" src="%s" alt="%s" loading="lazy">' % (
             ea(cover_url(cfg, a.cover)), ea(a.title))
+    chip = "" if a.cover else ('<p class="card__rubric">%s</p>\n' % ep(rubric_title(cfg, a.rubric)))
     return (
         '<article class="card">\n'
         '<a class="card__link" href="%s">\n%s'
+        '<div class="card__body">\n'
+        '%s'
         '<h2 class="card__title">%s</h2>\n'
         '<p class="card__desc">%s</p>\n'
-        '<p class="card__meta">%s</p>\n'
+        '<p class="card__meta">%s &middot; %d мин чтения</p>\n'
+        '</div>\n'
         '</a>\n</article>\n'
-        % (rel(a.url_path), cover, ep(a.title), ep(a.description), human_date(a.date))
+        % (rel(a.url_path), cover, chip, ep(a.title),
+           ep(a.description), human_date(a.date), reading_time(a.body_md))
     )
 
 
@@ -419,14 +437,15 @@ def build(clean: bool = False) -> None:
         content = (
             '<article class="post">\n'
             '<h1 class="post__title">%s</h1>\n'
-            '<p class="post__meta">%s &middot; %s &middot; %s</p>\n'
+            '<p class="post__meta">%s &middot; %s &middot; %s &middot; %d мин чтения</p>\n'
             "%s\n%s\n%s"
             '<p class="post__back"><a href="%s">&larr; Все статьи рубрики</a></p>\n'
             '</article>\n'
             '<script type="application/ld+json">%s</script>\n'
             % (ep(a.title), human_date(a.date), ep(rubrics[a.rubric]["title"]),
-               ep(a.author or cfg["site"]["author"]), cover_block, body_html,
-               related_html, rel("/%s/" % a.rubric), json.dumps(jsonld, ensure_ascii=False))
+               ep(a.author or cfg["site"]["author"]), reading_time(a.body_md),
+               cover_block, body_html, related_html, rel("/%s/" % a.rubric),
+               json.dumps(jsonld, ensure_ascii=False))
         )
         out = PUBLIC_DIR / a.rubric / a.slug / "index.html"
         out.parent.mkdir(parents=True, exist_ok=True)
@@ -440,7 +459,7 @@ def build(clean: bool = False) -> None:
     # --- главная ----------------------------------------------------------
     cards = "".join(article_card(a, cfg) for a in articles[:cfg.get("index_limit", 12)])
     index_content = (
-        '<h1 class="page-title">%s</h1>\n<p class="page-lead">%s</p>\n%s'
+        '<h1 class="page-title">%s</h1>\n<p class="page-lead">%s</p>\n<div class="cards">%s</div>'
         % (ep(cfg["site"]["title"]), ep(cfg["site"].get("description", "")), cards)
     )
     (PUBLIC_DIR / "index.html").write_text(
@@ -453,7 +472,7 @@ def build(clean: bool = False) -> None:
     # --- рубрики ----------------------------------------------------------
     for slug, r in rubrics.items():
         items = [a for a in articles if a.rubric == slug]
-        content = ('<h1 class="page-title">%s</h1>\n<p class="page-lead">%s</p>\n%s'
+        content = ('<h1 class="page-title">%s</h1>\n<p class="page-lead">%s</p>\n<div class="cards">%s</div>'
                    % (ep(r["title"]), ep(r.get("description", "")),
                       "".join(article_card(a, cfg) for a in items) or "<p>Пока пусто.</p>"))
         out = PUBLIC_DIR / slug / "index.html"
