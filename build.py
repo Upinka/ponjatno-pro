@@ -291,6 +291,11 @@ def head_html(cfg: dict, title: str, description: str, canonical: str,
         name, content = tag.get("name"), tag.get("content")
         if name and content:
             verify_tags += '<meta name="%s" content="%s">\n' % (ea(name), ea(content))
+    # рекламные пиксели (Дзен, ВК, любые) — вставляются как есть
+    for pixel in cfg.get("analytics", {}).get("pixels", []) or []:
+        html_code = pixel.get("html") or ""
+        if html_code:
+            verify_tags += html_code.strip() + "\n"
     return (
         '<!DOCTYPE html>\n<html lang="ru">\n<head>\n'
         '<meta charset="utf-8">\n'
@@ -323,6 +328,11 @@ def page_html(cfg: dict, title: str, description: str, canonical: str,
               cover_url: str = "", ad_top: str = "", ad_bottom: str = "") -> str:
     base = cfg["site"]["base_url"].rstrip("/")
     site = cfg["site"]
+    links = cfg.get("links", {})
+    dzen_link = (' &middot; <a href="%s" rel="noopener">Мы в Дзене</a>' % ea(links["dzen"])
+                 if links.get("dzen") else "")
+    tg_link = (' &middot; <a href="%s" rel="noopener">Telegram</a>' % ea(links["telegram"])
+               if links.get("telegram") else "")
     return (
         head_html(cfg, title, description, canonical, og_type, cover_url)
         + "<body>\n"
@@ -332,13 +342,45 @@ def page_html(cfg: dict, title: str, description: str, canonical: str,
         '<nav class="nav">%s</nav>\n'
         '</header>\n<main class="wrap">\n%s\n%s\n%s\n</main>\n'
         '<footer class="site-footer">\n'
-        '<p>%s &middot; <a href="%s">RSS</a></p>\n'
+        '<p>%s &middot; <a href="%s">RSS</a>%s%s</p>\n'
         '<p class="muted">%s</p>\n'
-        '</footer>\n</body>\n</html>\n'
+        '</footer>\n%s</body>\n</html>\n'
         % (rel("/"), ep(site["title"]), ep(site.get("tagline", "")),
            nav_html(cfg["rubrics"], active), ad_top, content, ad_bottom,
            ep(site["title"]), rel("/" + cfg["feed"]["path"].lstrip("/")),
-           ep(site.get("copyright", "")))
+           dzen_link, tg_link,
+           ep(site.get("copyright", "")), events_script(cfg))
+    )
+
+
+def events_script(cfg: dict) -> str:
+    """События для Метрики/пикселей: открытие статьи, полное чтение, внешний переход."""
+    metrika = cfg.get("analytics", {}).get("yandex_metrika_id")
+    if not metrika:
+        return ""
+    return (
+        "<script>\n"
+        "(function(){\n"
+        "  var ID=%s;\n"
+        "  function goal(n){ try{ if(window.ym){ ym(ID,'reachGoal',n); } }catch(e){} }\n"
+        "  if (document.querySelector('.post')) { goal('article_open'); }\n"
+        "  var sent=false;\n"
+        "  function fullRead(){\n"
+        "    if (sent) return; sent=true; goal('article_full_read');\n"
+        "  }\n"
+        "  window.addEventListener('scroll', function(){\n"
+        "    var d=document.documentElement;\n"
+        "    if (!d.scrollHeight) return;\n"
+        "    if ((d.scrollTop+window.innerHeight)/d.scrollHeight > 0.9) fullRead();\n"
+        "  }, {passive:true});\n"
+        "  document.addEventListener('click', function(e){\n"
+        "    var a=e.target && e.target.closest ? e.target.closest('a') : null;\n"
+        "    if (!a || !a.hostname) return;\n"
+        "    if (a.hostname !== location.hostname) goal('external_click');\n"
+        "  }, true);\n"
+        "})();\n"
+        "</script>\n"
+        % json.dumps(metrika)
     )
 
 

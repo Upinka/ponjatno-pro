@@ -44,7 +44,13 @@
     "comment": "Включите после модерации в РСЯ и положите выданный Яндексом код в ads/rsy.html"
   },
   "analytics": {
-    "yandex_metrika_id": null
+    "yandex_metrika_id": null,
+    "pixels": [],
+    "comment": "pixels: список объектов {name, html} — код пикселя вставляется в head как есть"
+  },
+  "links": {
+    "dzen": "https://dzen.ru/id/6b03b148397a0d2ee6fd26d9",
+    "telegram": ""
   },
   "verification": {
     "comment": "Файл подтверждения прав кладите в static/root/ — попадёт в корень сайта. Мета-тег — в meta_tags",
