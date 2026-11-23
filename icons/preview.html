@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<title>Иконки «Понятно про»</title>
+<style>
+  :root { --ink:#111827; --muted:#6b7280; --line:#e5e7eb; --accent:#2563eb; }
+  * { box-sizing:border-box; }
+  body { margin:0; font:16px/1.5 "Segoe UI",Roboto,Arial,sans-serif; color:var(--ink); background:#faf9f6; }
+  .wrap { max-width:1100px; margin:0 auto; padding:32px 24px 48px; }
+  h1 { font-size:26px; margin:0 0 4px; letter-spacing:-.02em; }
+  .lead { color:var(--muted); margin:0 0 28px; font-size:15px; }
+  h2 { font-size:13px; text-transform:uppercase; letter-spacing:.08em; color:var(--muted); margin:28px 0 14px; }
+  .grid { display:grid; grid-template-columns:repeat(5,1fr); gap:14px; }
+  .cell { background:#fff; border:1px solid var(--line); border-radius:14px; padding:18px 14px; text-align:center; }
+  .cell svg, .cell img { width:44px; height:44px; color:var(--accent); }
+  .name { font-size:12.5px; margin-top:10px; color:var(--ink); }
+  .sizes { display:flex; align-items:center; justify-content:center; gap:10px; margin-top:8px; color:#9ca3af; }
+  .sizes img:nth-child(1){ width:24px;height:24px; }
+  .sizes img:nth-child(2){ width:16px;height:16px; }
+  .sizes img:nth-child(3){ width:12px;height:12px; }
+  .dark { background:#0f172a; border-radius:16px; padding:18px; margin-top:10px; }
+  .dark .grid .cell { background:transparent; border-color:#22304a; }
+  .dark .cell svg, .dark .cell img { color:#93c5fd; }
+  .dark .name { color:#cbd5e1; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>Иконки «Понятно про»</h1>
+  <p class="lead">10 иконок, единый стиль: сетка 24×24, обводка 1.75, скруглённые концы. Цвет наследуется от текста (currentColor).</p>
+
+  <h2>Темы</h2>
+  <div class="grid">
+    <div class="cell"><img src="rabota-i-dohod.svg" alt=""><div class="name">Работа и доход</div><div class="sizes"><img src="rabota-i-dohod.svg" alt=""><img src="rabota-i-dohod.svg" alt=""><img src="rabota-i-dohod.svg" alt=""></div></div>
+    <div class="cell"><img src="ii-instrumenty.svg" alt=""><div class="name">ИИ и инструменты</div><div class="sizes"><img src="ii-instrumenty.svg" alt=""><img src="ii-instrumenty.svg" alt=""><img src="ii-instrumenty.svg" alt=""></div></div>
+    <div class="cell"><img src="dom-i-byt.svg" alt=""><div class="name">Дом и быт</div><div class="sizes"><img src="dom-i-byt.svg" alt=""><img src="dom-i-byt.svg" alt=""><img src="dom-i-byt.svg" alt=""></div></div>
+    <div class="cell"><img src="karta-i-put.svg" alt=""><div class="name">Авто и путь</div><div class="sizes"><img src="karta-i-put.svg" alt=""><img src="karta-i-put.svg" alt=""><img src="karta-i-put.svg" alt=""></div></div>
+  </div>
+
+  <h2>Подборки</h2>
+  <div class="grid">
+    <div class="cell"><img src="podborka-dengi.svg" alt=""><div class="name">Деньги без иллюзий</div><div class="sizes"><img src="podborka-dengi.svg" alt=""><img src="podborka-dengi.svg" alt=""><img src="podborka-dengi.svg" alt=""></div></div>
+    <div class="cell"><img src="podborka-ai.svg" alt=""><div class="name">Нейросеть без магии</div><div class="sizes"><img src="podborka-ai.svg" alt=""><img src="podborka-ai.svg" alt=""><img src="podborka-ai.svg" alt=""></div></div>
+    <div class="cell"><img src="podborka-dom.svg" alt=""><div class="name">Дом: платить только за нужное</div><div class="sizes"><img src="podborka-dom.svg" alt=""><img src="podborka-dom.svg" alt=""><img src="podborka-dom.svg" alt=""></div></div>
+    <div class="cell"><img src="podborka-zima.svg" alt=""><div class="name">Зима без сюрпризов</div><div class="sizes"><img src="podborka-zima.svg" alt=""><img src="podborka-zima.svg" alt=""><img src="podborka-zima.svg" alt=""></div></div>
+    <div class="cell"><img src="podborka-vecher.svg" alt=""><div class="name">Один вечер — одно дело</div><div class="sizes"><img src="podborka-vecher.svg" alt=""><img src="podborka-vecher.svg" alt=""><img src="podborka-vecher.svg" alt=""></div></div>
+    <div class="cell"><img src="podborka-proverka.svg" alt=""><div class="name">Проверить, прежде чем платить</div><div class="sizes"><img src="podborka-proverka.svg" alt=""><img src="podborka-proverka.svg" alt=""><img src="podborka-proverka.svg" alt=""></div></div>
+  </div>
+
+  <h2>На тёмном фоне</h2>
+  <div class="dark">
+    <div class="grid">
+      <div class="cell"><img src="rabota-i-dohod.svg" alt=""><div class="name">Работа и доход</div></div>
+      <div class="cell"><img src="ii-instrumenty.svg" alt=""><div class="name">ИИ и инструменты</div></div>
+      <div class="cell"><img src="dom-i-byt.svg" alt=""><div class="name">Дом и быт</div></div>
+      <div class="cell"><img src="karta-i-put.svg" alt=""><div class="name">Авто и путь</div></div>
+      <div class="cell"><img src="podborka-proverka.svg" alt=""><div class="name">Проверить, прежде чем платить</div></div>
+    </div>
+  </div>
+</div>
+</body>
+</html>
