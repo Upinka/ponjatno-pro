@@ -47,6 +47,7 @@
     "yandex_metrika_id": null
   },
   "verification": {
-    "comment": "Файл подтверждения прав Яндекс.Вебмастера/Дзена кладите в static/root/ — он попадёт в корень сайта"
+    "comment": "Файл подтверждения прав кладите в static/root/ — попадёт в корень сайта. Мета-тег — в meta_tags",
+    "meta_tags": []
   }
 }

@@ -278,6 +278,11 @@ def head_html(cfg: dict, title: str, description: str, canonical: str,
         )
     og_image = ('<meta property="og:image" content="%s">' % ea(cover_url)) if cover_url else ""
     stylesheet = '<link rel="stylesheet" href="%s">\n' % rel("/static/style.css")
+    verify_tags = ""
+    for tag in cfg.get("verification", {}).get("meta_tags", []) or []:
+        name, content = tag.get("name"), tag.get("content")
+        if name and content:
+            verify_tags += '<meta name="%s" content="%s">\n' % (ea(name), ea(content))
     return (
         '<!DOCTYPE html>\n<html lang="ru">\n<head>\n'
         '<meta charset="utf-8">\n'
@@ -291,10 +296,11 @@ def head_html(cfg: dict, title: str, description: str, canonical: str,
         '<meta property="og:description" content="%s">\n'
         '<meta property="og:url" content="%s">\n%s'
         '%s'
+        '%s'
         '%s\n</head>\n'
         % (ep(title), ea(description), ea(canonical), base, cfg["feed"]["path"],
            og_type, ea(title), ea(description), ea(canonical), og_image,
-           stylesheet, extra)
+           stylesheet, verify_tags, extra)
     )
 
 
