@@ -298,6 +298,9 @@ def head_html(cfg: dict, title: str, description: str, canonical: str,
         "<title>%s</title>\n"
         '<meta name="description" content="%s">\n'
         '<link rel="canonical" href="%s">\n'
+        '<link rel="icon" href="%s" type="image/svg+xml">\n'
+        '<link rel="icon" href="%s" sizes="32x32" type="image/png">\n'
+        '<link rel="apple-touch-icon" href="%s">\n'
         '<link rel="alternate" type="application/rss+xml" title="RSS" href="%s/%s">\n'
         '<meta property="og:type" content="%s">\n'
         '<meta property="og:title" content="%s">\n'
@@ -306,7 +309,10 @@ def head_html(cfg: dict, title: str, description: str, canonical: str,
         '%s'
         '%s'
         '%s\n</head>\n'
-        % (ep(title), ea(description), ea(canonical), base, cfg["feed"]["path"],
+        % (ep(title), ea(description), ea(canonical),
+           rel("/static/favicon.svg"), rel("/static/favicon-32.png"),
+           rel("/static/apple-touch-icon.png"),
+           base, cfg["feed"]["path"],
            og_type, ea(title), ea(description), ea(canonical), og_image,
            stylesheet, verify_tags, extra)
     )

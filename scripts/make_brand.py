@@ -122,12 +122,59 @@ def make_header(palette: str) -> Path:
     return path
 
 
+def make_favicons() -> list[Path]:
+    """Иконки вкладки: SVG (основная) + PNG для старых браузеров и iOS."""
+    OUT.mkdir(parents=True, exist_ok=True)
+    made: list[Path] = []
+
+    svg = (
+        '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">\n'
+        '  <defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1">\n'
+        '    <stop offset="0" stop-color="#2563eb"/><stop offset="1" stop-color="#0f172a"/>\n'
+        "  </linearGradient></defs>\n"
+        '  <rect width="64" height="64" rx="14" fill="url(#g)"/>\n'
+        '  <text x="32" y="43" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif"\n'
+        '        font-size="27" font-weight="700" fill="#ffffff">ПП</text>\n'
+        "</svg>\n"
+    )
+    svg_path = OUT / "favicon.svg"
+    svg_path.write_text(svg, encoding="utf-8")
+    made.append(svg_path)
+
+    for size, name in ((512, "favicon-512.png"), (180, "apple-touch-icon.png"), (32, "favicon-32.png")):
+        start, end = PALETTES["blue"]
+        img = Image.new("RGB", (size, size), end)
+        draw = ImageDraw.Draw(img)
+        # диагональный градиент
+        for x in range(size):
+            t = x / size
+            color = tuple(int(start[i] + (end[i] - start[i]) * t) for i in range(3))
+            draw.line([(x, 0), (x, size)], fill=color)
+        # монограмма
+        f = font(BOLD, int(size * 0.5))
+        left, top, right, bottom = draw.textbbox((0, 0), "ПП", font=f)
+        draw.text(((size - (right - left)) / 2 - left, (size - (bottom - top)) / 2 - top),
+                  "ПП", font=f, fill=(255, 255, 255))
+        path = OUT / name
+        img.save(path, "PNG", optimize=True)
+        made.append(path)
+
+    # копии в static/, чтобы попали в сборку сайта
+    for path in list(made):
+        dest = ROOT / "static" / path.name
+        dest.write_bytes(path.read_bytes())
+        made.append(dest)
+    return made
+
+
 def main() -> None:
     if hasattr(sys.stdout, "reconfigure"):
         sys.stdout.reconfigure(encoding="utf-8", errors="replace")
     print("аватар:", make_avatar("blue", "avatar.png").relative_to(ROOT))
     print("аватар (вариант):", make_avatar("violet", "avatar-alt.png").relative_to(ROOT))
     print("шапка:", make_header("blue").relative_to(ROOT))
+    for p in make_favicons():
+        print("иконка:", p.relative_to(ROOT))
 
 
 if __name__ == "__main__":
