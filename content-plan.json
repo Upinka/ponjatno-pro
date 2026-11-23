@@ -179,6 +179,86 @@
       "rubric": "karta-i-put",
       "angle": "остановки, еда, развлечения, безопасность",
       "status": "new"
+    },
+    {
+      "slug": "chernaja-pjatnica-falshivye-skidki",
+      "title": "Чёрная пятница: 6 признаков фальшивой скидки",
+      "rubric": "dom-i-byt",
+      "angle": "как проверить цену и не купить ненужное",
+      "status": "new",
+      "tag": "season"
+    },
+    {
+      "slug": "novogodnij-bjudzhet",
+      "title": "Новогодний бюджет: сколько отложить и как не уйти в кредит",
+      "rubric": "rabota-i-dohod",
+      "angle": "план расходов на праздники и подарки",
+      "status": "new",
+      "tag": "season"
+    },
+    {
+      "slug": "trinadcataja-zarplata-kuda-det",
+      "title": "Тринадцатая зарплата: куда деть, чтобы не растворилась",
+      "rubric": "rabota-i-dohod",
+      "angle": "порядок приоритетов: долги, резерв, покупки",
+      "status": "new",
+      "tag": "season"
+    },
+    {
+      "slug": "pochemu-vyrosla-kvitanciya-otoplenie",
+      "title": "Почему выросла квитанция за отопление и что проверить",
+      "rubric": "dom-i-byt",
+      "angle": "норматив, общедомовой счётчик, перерасчёт",
+      "status": "new",
+      "tag": "season"
+    },
+    {
+      "slug": "shiny-2026-markirovka",
+      "title": "Шины 2026: что изменилось в маркировке и на что смотреть",
+      "rubric": "karta-i-put",
+      "angle": "маркировка, сезонность, требования",
+      "status": "new",
+      "tag": "trend"
+    },
+    {
+      "slug": "chto-novogo-v-nejrosetjah-za-mesjac",
+      "title": "Что нового в нейросетях за месяц: 5 изменений для быта",
+      "rubric": "ii-instrumenty",
+      "angle": "обзор изменений без хайпа",
+      "status": "new",
+      "tag": "trend"
+    },
+    {
+      "slug": "ii-agenty-chto-jeto",
+      "title": "ИИ-агенты: чем отличаются от чат-ботов и зачем это вам",
+      "rubric": "ii-instrumenty",
+      "angle": "агент vs чат, примеры задач, риски",
+      "status": "new",
+      "tag": "trend"
+    },
+    {
+      "slug": "podarki-bez-pereplaty",
+      "title": "Подарки без переплаты: 7 идей до 2000 рублей",
+      "rubric": "dom-i-byt",
+      "angle": "подарки, которые не выбрасывают",
+      "status": "new",
+      "tag": "season"
+    },
+    {
+      "slug": "udaljonka-2026-chto-izmenilos",
+      "title": "Удалёнка в 2026: что изменилось на рынке",
+      "rubric": "rabota-i-dohod",
+      "angle": "ставки, требования, конкуренция",
+      "status": "new",
+      "tag": "trend"
+    },
+    {
+      "slug": "holodilnik-zimoj-na-balkone",
+      "title": "Холодильник зимой на балконе: почему это плохая идея",
+      "rubric": "dom-i-byt",
+      "angle": "температурные режимы и гарантия",
+      "status": "new",
+      "tag": "season"
     }
   ],
   "updated": "2026-11-23T08:24:59"
