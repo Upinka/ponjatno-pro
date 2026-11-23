@@ -1,0 +1,14 @@
+# результат сборки — генерируется build.py
+public/
+
+# секреты
+.env
+.secrets/
+
+# python
+__pycache__/
+*.pyc
+
+# системное
+.DS_Store
+Thumbs.db
