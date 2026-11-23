@@ -95,6 +95,7 @@ class Article:
     cover: str
     body_md: str
     source: Path
+    feed_exclude: bool = False
 
     @property
     def url_path(self) -> str:
@@ -145,6 +146,7 @@ def load_articles() -> list[Article]:
             cover=meta.get("cover", ""),
             body_md=body,
             source=path,
+            feed_exclude=meta.get("feed_exclude", "").lower() in ("true", "1", "yes"),
         ))
     articles.sort(key=lambda a: a.date, reverse=True)
     if skipped:
@@ -467,7 +469,8 @@ def build(clean: bool = False) -> None:
     feed_cfg = cfg["feed"]
     window_days = int(feed_cfg.get("window_days", 45))
     since = datetime.now(MSK) - timedelta(days=window_days)
-    in_window = [a for a in articles if a.date >= since][: int(feed_cfg.get("max_items", 50))]
+    in_window = [a for a in articles if not a.feed_exclude and a.date >= since][
+        : int(feed_cfg.get("max_items", 50))]
 
     items_xml = []
     for a in in_window:
