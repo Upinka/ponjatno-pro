@@ -14,7 +14,7 @@ from __future__ import annotations
 
 import json
 import sys
-from datetime import datetime
+from datetime import date, datetime
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -44,6 +44,29 @@ def pick(plan: dict) -> dict | None:
             topic["status"] = "done"
             continue
         return topic
+    return None
+
+
+RUBRICS = ["rabota-i-dohod", "ii-instrumenty", "dom-i-byt", "karta-i-put"]
+SLOT_OFFSET = {"morning": 0, "midday": 1, "evening": 2}
+
+
+def rubric_for_slot(slot: str, today: date) -> str:
+    """Ротация: каждый день у слотов разные рубрики, за 4 дня покрываются все."""
+    base = today.toordinal() % len(RUBRICS)
+    return RUBRICS[(base + SLOT_OFFSET[slot]) % len(RUBRICS)]
+
+
+def pick_for_rubric(plan: dict, rubric: str) -> dict | None:
+    used = existing_slugs()
+    for topic in plan["topics"]:
+        if topic["status"] != "new":
+            continue
+        if topic["slug"] in used:
+            topic["status"] = "done"
+            continue
+        if topic["rubric"] == rubric:
+            return topic
     return None
 
 
@@ -85,6 +108,28 @@ def main() -> None:
             print("Нет темы в работе. Возьмите новую: --take")
             sys.exit(4)
         print(json.dumps(current, ensure_ascii=False, indent=2))
+        return
+
+    if "--slot" in args:
+        slot = args[args.index("--slot") + 1]
+        if slot not in SLOT_OFFSET:
+            raise SystemExit("Слот должен быть morning, midday или evening")
+        today = date.today()
+        rubric = rubric_for_slot(slot, today)
+        topic = pick_for_rubric(plan, rubric)
+        if topic is None:
+            topic = pick(plan)
+            if topic is None:
+                print("Тем не осталось — пополните content-plan.json")
+                sys.exit(2)
+            print("ВНИМАНИЕ: в рубрике %s темы закончились, взята %s"
+                  % (rubric, topic["rubric"]), file=sys.stderr)
+        topic["status"] = "in_progress"
+        topic["taken_at"] = datetime.now().isoformat(timespec="seconds")
+        topic["slot"] = slot
+        topic["day"] = today.isoformat()
+        save(plan)
+        print(json.dumps(topic, ensure_ascii=False, indent=2))
         return
 
     topic = pick(plan)

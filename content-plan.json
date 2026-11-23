@@ -2,30 +2,184 @@
   "version": 1,
   "comment": "Банк тем для ежедневных публикаций. status: new | in_progress | done. Скрипт scripts/next_topic.py берёт первую new.",
   "topics": [
-    {"slug": "chek-list-pered-pokupkoj-tehniki", "title": "Чек-лист перед покупкой бытовой техники: 8 вопросов", "rubric": "dom-i-byt", "angle": "как не переплатить за функции, которыми не пользуются", "status": "new"},
-    {"slug": "kak-otvetit-na-vopros-o-zarplate", "title": "Как отвечать на вопрос о зарплате на собеседовании", "rubric": "rabota-i-dohod", "angle": "называть цифру, не теряя оффер; вилка и аргументы", "status": "new"},
-    {"slug": "gde-nejroset-vret-v-medicine", "title": "Нейросеть и здоровье: где ответ модели опасен", "rubric": "ii-instrumenty", "angle": "какие вопросы задавать можно, а какие нельзя", "status": "new"},
-    {"slug": "protechka-v-kvartire-chto-delat", "title": "Протечка в квартире: порядок действий за 10 минут", "rubric": "dom-i-byt", "angle": "перекрыть, снять на видео, кто платит", "status": "new"},
-    {"slug": "avtozimoj-progress", "title": "Машина не заводится в мороз: 6 шагов по порядку", "rubric": "karta-i-put", "angle": "от аккумулятора до эвакуатора", "status": "new"},
-    {"slug": "samozanyatost-pervye-shagi", "title": "Самозанятость: как оформить и что это меняет", "rubric": "rabota-i-dohod", "angle": "налоги, чеки, лимиты, когда переходить на ИП", "status": "new"},
-    {"slug": "nejroset-dlja-dokumentov", "title": "Нейросеть для документов: договор, инструкция, квитанция", "rubric": "ii-instrumenty", "angle": "как разобрать PDF и не потерять смысл", "status": "new"},
-    {"slug": "kak-chitat-dogovor-arendy", "title": "Как читать договор аренды: 7 пунктов, которые важны", "rubric": "dom-i-byt", "angle": "залог, ремонт, расторжение, коммуналка", "status": "new"},
-    {"slug": "rashod-topliva-prichiny", "title": "Расход топлива вырос: 8 причин и что проверить", "rubric": "karta-i-put", "angle": "от шин до датчиков, с ценами", "status": "new"},
-    {"slug": "kak-ne-vygoret-na-udalenke", "title": "Как не выгореть, работая из дома", "rubric": "rabota-i-dohod", "angle": "границы дня, место работы, признаки выгорания", "status": "new"},
-    {"slug": "besplatnye-ii-servisy-kotorye-stoit-probovat", "title": "7 бесплатных ИИ-сервисов, которые реально полезны", "rubric": "ii-instrumenty", "angle": "что дает бесплатный тариф и где ловушка", "status": "new"},
-    {"slug": "hranenie-veshhej-sistema", "title": "Хранение вещей: система, при которой ничего не теряется", "rubric": "dom-i-byt", "angle": "зоны, подписи, ревизия раз в сезон", "status": "new"},
-    {"slug": "shiny-kogda-menjat", "title": "Шины: когда менять и как хранить до следующего сезона", "rubric": "karta-i-put", "angle": "остаток протектора, маркировка, хранение", "status": "new"},
-    {"slug": "kak-prodat-veshhi-na-avito", "title": "Как продать ненужные вещи на Авито: 6 шагов", "rubric": "rabota-i-dohod", "angle": "фото, цена, описание, безопасность сделки", "status": "new"},
-    {"slug": "ii-dlja-uchenby", "title": "Нейросеть в учёбе: как объяснить себе тему за 20 минут", "rubric": "ii-instrumenty", "angle": "три режима объяснения и проверка понимания", "status": "new"},
-    {"slug": "kak-vybrat-stiralnuju-mashinu", "title": "Как выбрать стиральную машину: 6 важных параметров", "rubric": "dom-i-byt", "angle": "загрузка, отжим, класс, гарантия сервиса", "status": "new"},
-    {"slug": "osago-kasko-chto-nuzhno", "title": "ОСАГО и КАСКО: как не купить лишнего", "rubric": "karta-i-put", "angle": "что реально покрывает и где переплата", "status": "new"},
-    {"slug": "kak-podnjat-cenu-bez-poteri-klientov", "title": "Как поднять цену в два раза без потери клиентов", "rubric": "rabota-i-dohod", "angle": "поэтапный рост, новые услуги, речь о цене", "status": "new"},
-    {"slug": "privatnost-v-chat-botah", "title": "Приватность в чат-ботах: какие данные нельзя отправлять", "rubric": "ii-instrumenty", "angle": "персональные данные, документы, рабочие тайны", "status": "new"},
-    {"slug": "kvartira-k-zime", "title": "Квартира к зиме: окна, отопление, влажность", "rubric": "dom-i-byt", "angle": "подготовка без ремонта и лишних трат", "status": "new"},
-    {"slug": "pokupka-bu-avto-proverki", "title": "Покупка б/у машины: 10 проверок без сервиса", "rubric": "karta-i-put", "angle": "документы, кузов, пробег, тест-драйв", "status": "new"},
-    {"slug": "kak-vesti-zhurnal-dohodov", "title": "Журнал доходов и расходов: простая система на 15 минут в неделю", "rubric": "rabota-i-dohod", "angle": "таблица, категории, раз в неделю", "status": "new"},
-    {"slug": "ii-dlja-foto-i-video", "title": "Нейросети для фото и видео: что законно, а что нет", "rubric": "ii-instrumenty", "angle": "права, чужие лица, коммерческое использование", "status": "new"},
-    {"slug": "domashnjaja-aptechka", "title": "Домашняя аптечка: что должно быть и что просрочено", "rubric": "dom-i-byt", "angle": "базовый состав, сроки, хранение", "status": "new"},
-    {"slug": "dalnaja-poezdka-s-detmi", "title": "Дальняя поездка с детьми: что взять и как спланировать", "rubric": "karta-i-put", "angle": "остановки, еда, развлечения, безопасность", "status": "new"}
-  ]
+    {
+      "slug": "chek-list-pered-pokupkoj-tehniki",
+      "title": "Чек-лист перед покупкой бытовой техники: 8 вопросов",
+      "rubric": "dom-i-byt",
+      "angle": "как не переплатить за функции, которыми не пользуются",
+      "status": "new"
+    },
+    {
+      "slug": "kak-otvetit-na-vopros-o-zarplate",
+      "title": "Как отвечать на вопрос о зарплате на собеседовании",
+      "rubric": "rabota-i-dohod",
+      "angle": "называть цифру, не теряя оффер; вилка и аргументы",
+      "status": "new"
+    },
+    {
+      "slug": "gde-nejroset-vret-v-medicine",
+      "title": "Нейросеть и здоровье: где ответ модели опасен",
+      "rubric": "ii-instrumenty",
+      "angle": "какие вопросы задавать можно, а какие нельзя",
+      "status": "new"
+    },
+    {
+      "slug": "protechka-v-kvartire-chto-delat",
+      "title": "Протечка в квартире: порядок действий за 10 минут",
+      "rubric": "dom-i-byt",
+      "angle": "перекрыть, снять на видео, кто платит",
+      "status": "new"
+    },
+    {
+      "slug": "avtozimoj-progress",
+      "title": "Машина не заводится в мороз: 6 шагов по порядку",
+      "rubric": "karta-i-put",
+      "angle": "от аккумулятора до эвакуатора",
+      "status": "done",
+      "taken_at": "2026-11-23T08:24:47",
+      "slot": "morning",
+      "day": "2026-11-23"
+    },
+    {
+      "slug": "samozanyatost-pervye-shagi",
+      "title": "Самозанятость: как оформить и что это меняет",
+      "rubric": "rabota-i-dohod",
+      "angle": "налоги, чеки, лимиты, когда переходить на ИП",
+      "status": "new"
+    },
+    {
+      "slug": "nejroset-dlja-dokumentov",
+      "title": "Нейросеть для документов: договор, инструкция, квитанция",
+      "rubric": "ii-instrumenty",
+      "angle": "как разобрать PDF и не потерять смысл",
+      "status": "new"
+    },
+    {
+      "slug": "kak-chitat-dogovor-arendy",
+      "title": "Как читать договор аренды: 7 пунктов, которые важны",
+      "rubric": "dom-i-byt",
+      "angle": "залог, ремонт, расторжение, коммуналка",
+      "status": "new"
+    },
+    {
+      "slug": "rashod-topliva-prichiny",
+      "title": "Расход топлива вырос: 8 причин и что проверить",
+      "rubric": "karta-i-put",
+      "angle": "от шин до датчиков, с ценами",
+      "status": "new"
+    },
+    {
+      "slug": "kak-ne-vygoret-na-udalenke",
+      "title": "Как не выгореть, работая из дома",
+      "rubric": "rabota-i-dohod",
+      "angle": "границы дня, место работы, признаки выгорания",
+      "status": "new"
+    },
+    {
+      "slug": "besplatnye-ii-servisy-kotorye-stoit-probovat",
+      "title": "7 бесплатных ИИ-сервисов, которые реально полезны",
+      "rubric": "ii-instrumenty",
+      "angle": "что дает бесплатный тариф и где ловушка",
+      "status": "new"
+    },
+    {
+      "slug": "hranenie-veshhej-sistema",
+      "title": "Хранение вещей: система, при которой ничего не теряется",
+      "rubric": "dom-i-byt",
+      "angle": "зоны, подписи, ревизия раз в сезон",
+      "status": "new"
+    },
+    {
+      "slug": "shiny-kogda-menjat",
+      "title": "Шины: когда менять и как хранить до следующего сезона",
+      "rubric": "karta-i-put",
+      "angle": "остаток протектора, маркировка, хранение",
+      "status": "new"
+    },
+    {
+      "slug": "kak-prodat-veshhi-na-avito",
+      "title": "Как продать ненужные вещи на Авито: 6 шагов",
+      "rubric": "rabota-i-dohod",
+      "angle": "фото, цена, описание, безопасность сделки",
+      "status": "new"
+    },
+    {
+      "slug": "ii-dlja-uchenby",
+      "title": "Нейросеть в учёбе: как объяснить себе тему за 20 минут",
+      "rubric": "ii-instrumenty",
+      "angle": "три режима объяснения и проверка понимания",
+      "status": "new"
+    },
+    {
+      "slug": "kak-vybrat-stiralnuju-mashinu",
+      "title": "Как выбрать стиральную машину: 6 важных параметров",
+      "rubric": "dom-i-byt",
+      "angle": "загрузка, отжим, класс, гарантия сервиса",
+      "status": "new"
+    },
+    {
+      "slug": "osago-kasko-chto-nuzhno",
+      "title": "ОСАГО и КАСКО: как не купить лишнего",
+      "rubric": "karta-i-put",
+      "angle": "что реально покрывает и где переплата",
+      "status": "new"
+    },
+    {
+      "slug": "kak-podnjat-cenu-bez-poteri-klientov",
+      "title": "Как поднять цену в два раза без потери клиентов",
+      "rubric": "rabota-i-dohod",
+      "angle": "поэтапный рост, новые услуги, речь о цене",
+      "status": "new"
+    },
+    {
+      "slug": "privatnost-v-chat-botah",
+      "title": "Приватность в чат-ботах: какие данные нельзя отправлять",
+      "rubric": "ii-instrumenty",
+      "angle": "персональные данные, документы, рабочие тайны",
+      "status": "new"
+    },
+    {
+      "slug": "kvartira-k-zime",
+      "title": "Квартира к зиме: окна, отопление, влажность",
+      "rubric": "dom-i-byt",
+      "angle": "подготовка без ремонта и лишних трат",
+      "status": "new"
+    },
+    {
+      "slug": "pokupka-bu-avto-proverki",
+      "title": "Покупка б/у машины: 10 проверок без сервиса",
+      "rubric": "karta-i-put",
+      "angle": "документы, кузов, пробег, тест-драйв",
+      "status": "new"
+    },
+    {
+      "slug": "kak-vesti-zhurnal-dohodov",
+      "title": "Журнал доходов и расходов: простая система на 15 минут в неделю",
+      "rubric": "rabota-i-dohod",
+      "angle": "таблица, категории, раз в неделю",
+      "status": "new"
+    },
+    {
+      "slug": "ii-dlja-foto-i-video",
+      "title": "Нейросети для фото и видео: что законно, а что нет",
+      "rubric": "ii-instrumenty",
+      "angle": "права, чужие лица, коммерческое использование",
+      "status": "new"
+    },
+    {
+      "slug": "domashnjaja-aptechka",
+      "title": "Домашняя аптечка: что должно быть и что просрочено",
+      "rubric": "dom-i-byt",
+      "angle": "базовый состав, сроки, хранение",
+      "status": "new"
+    },
+    {
+      "slug": "dalnaja-poezdka-s-detmi",
+      "title": "Дальняя поездка с детьми: что взять и как спланировать",
+      "rubric": "karta-i-put",
+      "angle": "остановки, еда, развлечения, безопасность",
+      "status": "new"
+    }
+  ],
+  "updated": "2026-11-23T08:24:59"
 }
