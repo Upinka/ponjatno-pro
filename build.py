@@ -102,6 +102,7 @@ class Article:
     body_md: str
     source: Path
     feed_exclude: bool = False
+    kind: str = "article"   # article | note | instruction
 
     @property
     def url_path(self) -> str:
@@ -153,6 +154,7 @@ def load_articles() -> list[Article]:
             body_md=body,
             source=path,
             feed_exclude=meta.get("feed_exclude", "").lower() in ("true", "1", "yes"),
+            kind=(meta.get("kind") or "article").strip().lower(),
         ))
     articles.sort(key=lambda a: a.date, reverse=True)
     if skipped:
@@ -407,17 +409,21 @@ def article_card(a: Article, cfg: dict) -> str:
         cover = '<img class="card__img" src="%s" alt="%s" loading="lazy">' % (
             ea(cover_url(cfg, a.cover)), ea(a.title))
     chip = "" if a.cover else ('<p class="card__rubric">%s</p>\n' % ep(rubric_title(cfg, a.rubric)))
+    kind_badge = ""
+    if a.kind in ("note", "instruction"):
+        label = "Заметка" if a.kind == "note" else "Инструкция"
+        kind_badge = '<p class="card__kind">%s</p>\n' % label
     return (
-        '<article class="card">\n'
+        '<article class="card card--%s">\n'
         '<a class="card__link" href="%s">\n%s'
         '<div class="card__body">\n'
-        '%s'
+        '%s%s'
         '<h2 class="card__title">%s</h2>\n'
         '<p class="card__desc">%s</p>\n'
         '<p class="card__meta">%s &middot; %d мин чтения</p>\n'
         '</div>\n'
         '</a>\n</article>\n'
-        % (rel(a.url_path), cover, chip, ep(a.title),
+        % (ea(a.kind), rel(a.url_path), cover, kind_badge, chip, ep(a.title),
            ep(a.description), human_date(a.date), reading_time(a.body_md))
     )
 

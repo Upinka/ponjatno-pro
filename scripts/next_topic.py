@@ -79,6 +79,14 @@ def main() -> None:
                 return
         raise SystemExit("Тема не найдена: " + slug)
 
+    if "--current" in args:
+        current = next((t for t in plan["topics"] if t["status"] == "in_progress"), None)
+        if current is None:
+            print("Нет темы в работе. Возьмите новую: --take")
+            sys.exit(4)
+        print(json.dumps(current, ensure_ascii=False, indent=2))
+        return
+
     topic = pick(plan)
     if topic is None:
         print("Тем не осталось — пополните content-plan.json")
