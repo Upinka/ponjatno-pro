@@ -20,6 +20,7 @@
 from __future__ import annotations
 
 import json
+import shutil
 import socket
 import subprocess
 import sys
@@ -37,6 +38,13 @@ GITHUB_PAGES_IPS = {
     "185.199.110.153", "185.199.111.153",
 }
 REPO = "Upinka/ponjatno-pro"
+
+# Git мог быть установлен уже после запуска сессии: PATH процесса может его не видеть.
+GIT = shutil.which("git") or next(
+    (p for p in (r"C:\Program Files\Git\cmd\git.exe",
+                 r"C:\Program Files (x86)\Git\cmd\git.exe") if Path(p).exists()),
+    "git",
+)
 
 
 def log(msg: str) -> None:
@@ -81,13 +89,15 @@ def set_base_url(url: str) -> str | None:
 
 
 def run(cmd: list[str]) -> subprocess.CompletedProcess:
+    if cmd and cmd[0] == "git":
+        cmd = [GIT] + cmd[1:]
     return subprocess.run(cmd, cwd=ROOT, capture_output=True, text=True,
                           encoding="utf-8", errors="replace")
 
 
 def git_token() -> str | None:
     try:
-        proc = subprocess.run(["git", "credential", "fill"], cwd=ROOT,
+        proc = subprocess.run([GIT, "credential", "fill"], cwd=ROOT,
                               input="protocol=https\nhost=github.com\n\n",
                               capture_output=True, text=True, timeout=30)
     except Exception:
