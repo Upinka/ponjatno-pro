@@ -44,9 +44,10 @@
     "comment": "Включите после модерации в РСЯ и положите выданный Яндексом код в ads/rsy.html"
   },
   "analytics": {
-    "yandex_metrika_id": null,
+    "yandex_metrika_id": 114538214,
+    "metrika_snippet_file": "analytics/metrika.html",
     "pixels": [],
-    "comment": "pixels: список объектов {name, html} — код пикселя вставляется в head как есть"
+    "comment": "metrika_snippet_file вставляется дословно в начало head; pixels — объекты {name, html}"
   },
   "links": {
     "dzen": "https://dzen.ru/id/6b03b148397a0d2ee6fd26d9",

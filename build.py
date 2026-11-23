@@ -273,15 +273,24 @@ def head_html(cfg: dict, title: str, description: str, canonical: str,
               og_type: str = "website", cover_url: str = "") -> str:
     base = cfg["site"]["base_url"].rstrip("/")
     metrika = cfg.get("analytics", {}).get("yandex_metrika_id")
-    extra = ""
-    if metrika:
-        extra = (
+    # Код счётчика: приоритет — файл analytics/metrika.html (вставляется дословно,
+    # как можно раньше в <head>). Если файла нет — генерируем минимальный сниппет.
+    counter_html = ""
+    snippet_file = cfg.get("analytics", {}).get("metrika_snippet_file")
+    if snippet_file:
+        snippet_path = ROOT / snippet_file
+        if snippet_path.exists():
+            counter_html = snippet_path.read_text(encoding="utf-8").strip() + "\n"
+        else:
+            print("  ВНИМАНИЕ: нет файла счётчика %s" % snippet_path)
+    if not counter_html and metrika:
+        counter_html = (
             '<script>(function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};'
             'm[i].l=1*new Date();for(var j=0;j<document.scripts.length;j++){if(document.scripts[j].src===r){return;}}'
             'k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})'
             '(window,document,"script","https://mc.yandex.ru/metrika/tag.js","ym");'
             'ym(%s,"init",{clickmap:true,trackLinks:true,accurateTrackBounce:true});</script>'
-            '<noscript><div><img src="https://mc.yandex.ru/watch/%s" style="position:absolute;left:-9999px" alt=""></div></noscript>'
+            '<noscript><div><img src="https://mc.yandex.ru/watch/%s" style="position:absolute;left:-9999px" alt=""></div></noscript>\n'
             % (metrika, metrika)
         )
     og_image = ('<meta property="og:image" content="%s">' % ea(cover_url)) if cover_url else ""
@@ -299,6 +308,7 @@ def head_html(cfg: dict, title: str, description: str, canonical: str,
     return (
         '<!DOCTYPE html>\n<html lang="ru">\n<head>\n'
         '<meta charset="utf-8">\n'
+        '%s'
         '<meta name="viewport" content="width=device-width, initial-scale=1">\n'
         "<title>%s</title>\n"
         '<meta name="description" content="%s">\n'
@@ -312,14 +322,14 @@ def head_html(cfg: dict, title: str, description: str, canonical: str,
         '<meta property="og:description" content="%s">\n'
         '<meta property="og:url" content="%s">\n%s'
         '%s'
-        '%s'
         '%s\n</head>\n'
-        % (ep(title), ea(description), ea(canonical),
+        % (counter_html,
+           ep(title), ea(description), ea(canonical),
            rel("/static/favicon.svg"), rel("/static/favicon-32.png"),
            rel("/static/apple-touch-icon.png"),
            base, cfg["feed"]["path"],
            og_type, ea(title), ea(description), ea(canonical), og_image,
-           stylesheet, verify_tags, extra)
+           stylesheet, verify_tags)
     )
 
 
