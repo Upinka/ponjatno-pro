@@ -265,8 +265,11 @@
       "title": "GTA 6: что делать в первые дни после релиза",
       "rubric": "igry",
       "angle": "порядок действий, настройки, на что не тратить время",
-      "status": "new",
-      "tag": "trend"
+      "status": "in_progress",
+      "tag": "trend",
+      "taken_at": "2026-11-24T05:00:05",
+      "slot": "morning",
+      "day": "2026-11-24"
     },
     {
       "slug": "gta-6-bez-spojlerov",
@@ -341,5 +344,5 @@
       "tag": "evergreen"
     }
   ],
-  "updated": "2026-11-23T08:24:59"
+  "updated": "2026-11-24T05:00:05"
 }
