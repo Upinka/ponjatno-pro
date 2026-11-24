@@ -37,12 +37,14 @@ RUBRIC_STYLE = {
     "ii-instrumenty": ((124, 58, 237), (28, 17, 64), (196, 181, 253)),
     "dom-i-byt": ((5, 150, 105), (4, 47, 42), (167, 243, 208)),
     "karta-i-put": ((234, 88, 12), (59, 18, 4), (253, 186, 116)),
+    "igry": ((236, 72, 153), (40, 10, 55), (253, 186, 216)),
 }
 RUBRIC_TITLES = {
     "rabota-i-dohod": "Работа и доход",
     "ii-instrumenty": "ИИ и инструменты",
     "dom-i-byt": "Дом и быт",
     "karta-i-put": "Авто и путь",
+    "igry": "Игры",
 }
 DEFAULT_STYLE = ((26, 86, 219), (15, 23, 42), (191, 219, 254))
 
@@ -169,11 +171,32 @@ def motif_karta(draw: ImageDraw.ImageDraw, w: int, h: int,
     draw.line([(0, int(h * 0.50)), (w, int(h * 0.38))], fill=color + (60,), width=3)
 
 
+def motif_igry(draw: ImageDraw.ImageDraw, w: int, h: int,
+               color: tuple, rnd: random.Random) -> None:
+    """Пиксельная сетка и кнопки геймпада."""
+    cell = int(w * 0.038)
+    cols, rows = 6, 3
+    x0 = int(w * 0.97 - cols * cell)
+    y0 = int(h * 0.16)
+    for r in range(rows):
+        for c in range(cols):
+            if rnd.random() < 0.45:
+                continue
+            x = x0 + c * cell
+            y = y0 + r * cell
+            draw.rounded_rectangle([(x + 2, y + 2), (x + cell - 4, y + cell - 4)],
+                                   radius=4, fill=color + ((60 if rnd.random() < 0.5 else 110),))
+    # «кнопки» геймпада
+    for cx, cy, r in ((w * 0.78, h * 0.70, 16), (w * 0.86, h * 0.70, 16)):
+        draw.ellipse([(cx - r, cy - r), (cx + r, cy + r)], fill=color + (120,))
+
+
 MOTIFS = {
     "rabota-i-dohod": motif_rabota,
     "ii-instrumenty": motif_ii,
     "dom-i-byt": motif_dom,
     "karta-i-put": motif_karta,
+    "igry": motif_igry,
 }
 
 

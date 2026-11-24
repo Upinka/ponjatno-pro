@@ -47,7 +47,7 @@ def pick(plan: dict) -> dict | None:
     return None
 
 
-RUBRICS = ["rabota-i-dohod", "ii-instrumenty", "dom-i-byt", "karta-i-put"]
+RUBRICS = ["rabota-i-dohod", "ii-instrumenty", "dom-i-byt", "karta-i-put", "igry"]
 SLOT_OFFSET = {"morning": 0, "midday": 1, "evening": 2}
 
 

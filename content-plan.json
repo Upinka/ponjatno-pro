@@ -259,6 +259,46 @@
       "angle": "температурные режимы и гарантия",
       "status": "new",
       "tag": "season"
+    },
+    {
+      "slug": "gta-6-pervye-dni-chto-delat",
+      "title": "GTA 6: что делать в первые дни после релиза",
+      "rubric": "igry",
+      "angle": "порядок действий, настройки, на что не тратить время",
+      "status": "new",
+      "tag": "trend"
+    },
+    {
+      "slug": "gta-6-bez-spojlerov",
+      "title": "Как играть в GTA 6 без спойлеров: 6 правил",
+      "rubric": "igry",
+      "angle": "настройки соцсетей, стримы, случайные подсказки",
+      "status": "new",
+      "tag": "trend"
+    },
+    {
+      "slug": "igry-zimy-2026-relizy",
+      "title": "Игры зимы 2026: главные релизы и на что смотреть",
+      "rubric": "igry",
+      "angle": "обзор без рейтингов и хайпа",
+      "status": "new",
+      "tag": "season"
+    },
+    {
+      "slug": "kak-vybrat-igru-na-vyhodnye",
+      "title": "Как выбрать игру на выходные и не бросить через час",
+      "rubric": "igry",
+      "angle": "длина, жанр, порог входа",
+      "status": "new",
+      "tag": "evergreen"
+    },
+    {
+      "slug": "skolko-stoit-igrat-legalno",
+      "title": "Сколько стоит играть легально: подписки, распродажи, регионы",
+      "rubric": "igry",
+      "angle": "где переплата, где экономия",
+      "status": "new",
+      "tag": "evergreen"
     }
   ],
   "updated": "2026-11-23T08:24:59"
