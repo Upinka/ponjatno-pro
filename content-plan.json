@@ -14,7 +14,10 @@
       "title": "Как отвечать на вопрос о зарплате на собеседовании",
       "rubric": "rabota-i-dohod",
       "angle": "называть цифру, не теряя оффер; вилка и аргументы",
-      "status": "new"
+      "status": "in_progress",
+      "taken_at": "2026-11-24T15:00:09",
+      "slot": "midday",
+      "day": "2026-11-24"
     },
     {
       "slug": "gde-nejroset-vret-v-medicine",
@@ -344,5 +347,5 @@
       "tag": "evergreen"
     }
   ],
-  "updated": "2026-11-24T05:02:53"
+  "updated": "2026-11-24T15:00:09"
 }
