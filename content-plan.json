@@ -24,7 +24,10 @@
       "title": "Нейросеть и здоровье: где ответ модели опасен",
       "rubric": "ii-instrumenty",
       "angle": "какие вопросы задавать можно, а какие нельзя",
-      "status": "new"
+      "status": "in_progress",
+      "taken_at": "2026-11-24T20:00:17",
+      "slot": "evening",
+      "day": "2026-11-24"
     },
     {
       "slug": "protechka-v-kvartire-chto-delat",
@@ -347,5 +350,5 @@
       "tag": "evergreen"
     }
   ],
-  "updated": "2026-11-24T15:04:01"
+  "updated": "2026-11-24T20:00:17"
 }
