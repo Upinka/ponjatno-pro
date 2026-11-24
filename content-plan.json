@@ -299,6 +299,46 @@
       "angle": "где переплата, где экономия",
       "status": "new",
       "tag": "evergreen"
+    },
+    {
+      "slug": "muzyka-kak-slushat-albomy",
+      "title": "Как слушать альбомы целиком в эпоху плейлистов",
+      "rubric": "muzyka",
+      "angle": "ритуал, внимание, выбор альбома",
+      "status": "new",
+      "tag": "evergreen"
+    },
+    {
+      "slug": "muzyka-domashnij-zvuk",
+      "title": "Домашний звук: что сначала — колонки или наушники",
+      "rubric": "muzyka",
+      "angle": "приоритеты трат и акустика комнаты",
+      "status": "new",
+      "tag": "evergreen"
+    },
+    {
+      "slug": "muzyka-gde-iskat-novoe",
+      "title": "Где искать новую музыку: 7 способов кроме рекомендаций",
+      "rubric": "muzyka",
+      "angle": "рубрики, лейблы, радио, живые записи",
+      "status": "new",
+      "tag": "evergreen"
+    },
+    {
+      "slug": "muzyka-koncerty-2026",
+      "title": "Концерты в 2026: на что смотреть и как не переплатить",
+      "rubric": "muzyka",
+      "angle": "перепродажа, акустика зала, время покупки",
+      "status": "new",
+      "tag": "season"
+    },
+    {
+      "slug": "muzyka-kak-podderzhat-artista",
+      "title": "Как поддержать любимого артиста деньгами напрямую",
+      "rubric": "muzyka",
+      "angle": "Bandcamp, мерч, билеты, подписки",
+      "status": "new",
+      "tag": "evergreen"
     }
   ],
   "updated": "2026-11-23T08:24:59"

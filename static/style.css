@@ -711,6 +711,8 @@ img { max-width: 100%; height: auto; display: block; }
 /* метки формата: заметка / инструкция */
 .card__kind {
   display: inline-block;
+  width: -moz-fit-content;
+  width: fit-content;
   margin: 0 0 6px;
   padding: 2px 10px;
   border-radius: 999px;

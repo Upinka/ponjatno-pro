@@ -38,6 +38,7 @@ RUBRIC_STYLE = {
     "dom-i-byt": ((5, 150, 105), (4, 47, 42), (167, 243, 208)),
     "karta-i-put": ((234, 88, 12), (59, 18, 4), (253, 186, 116)),
     "igry": ((236, 72, 153), (40, 10, 55), (253, 186, 216)),
+    "muzyka": ((6, 182, 212), (8, 34, 55), (165, 243, 252)),
 }
 RUBRIC_TITLES = {
     "rabota-i-dohod": "Работа и доход",
@@ -45,6 +46,7 @@ RUBRIC_TITLES = {
     "dom-i-byt": "Дом и быт",
     "karta-i-put": "Авто и путь",
     "igry": "Игры",
+    "muzyka": "Музыка",
 }
 DEFAULT_STYLE = ((26, 86, 219), (15, 23, 42), (191, 219, 254))
 
@@ -191,12 +193,36 @@ def motif_igry(draw: ImageDraw.ImageDraw, w: int, h: int,
         draw.ellipse([(cx - r, cy - r), (cx + r, cy + r)], fill=color + (120,))
 
 
+def motif_muzyka(draw: ImageDraw.ImageDraw, w: int, h: int,
+                 color: tuple, rnd: random.Random) -> None:
+    """Эквалайзер и виниловый диск."""
+    import math
+
+    # пластинка
+    cx, cy, r = int(w * 0.80), int(h * 0.34), int(h * 0.20)
+    for rr in range(r, 0, -8):
+        draw.ellipse([(cx - rr, cy - rr), (cx + rr, cy + rr)], outline=color + (60,), width=2)
+    draw.ellipse([(cx - 12, cy - 12), (cx + 12, cy + 12)], fill=color + (170,))
+
+    # эквалайзер
+    bars = 9
+    bw = int(w * 0.022)
+    gap = int(w * 0.012)
+    base = int(h * 0.86)
+    x0 = int(w * 0.55)
+    for i in range(bars):
+        bh = int(h * rnd.uniform(0.08, 0.26) * (0.6 + 0.4 * math.sin(i / 2)))
+        x = x0 + i * (bw + gap)
+        draw.rounded_rectangle([(x, base - bh), (x + bw, base)], radius=4, fill=color + (110,))
+
+
 MOTIFS = {
     "rabota-i-dohod": motif_rabota,
     "ii-instrumenty": motif_ii,
     "dom-i-byt": motif_dom,
     "karta-i-put": motif_karta,
     "igry": motif_igry,
+    "muzyka": motif_muzyka,
 }
 
 
