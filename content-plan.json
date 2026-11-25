@@ -7,7 +7,10 @@
       "title": "Чек-лист перед покупкой бытовой техники: 8 вопросов",
       "rubric": "dom-i-byt",
       "angle": "как не переплатить за функции, которыми не пользуются",
-      "status": "new"
+      "status": "in_progress",
+      "taken_at": "2026-11-25T20:00:07",
+      "slot": "evening",
+      "day": "2026-11-25"
     },
     {
       "slug": "kak-otvetit-na-vopros-o-zarplate",
@@ -356,5 +359,5 @@
       "tag": "evergreen"
     }
   ],
-  "updated": "2026-11-25T15:02:51"
+  "updated": "2026-11-25T20:00:07"
 }
