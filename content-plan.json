@@ -61,7 +61,7 @@
       "title": "Нейросеть для документов: договор, инструкция, квитанция",
       "rubric": "ii-instrumenty",
       "angle": "как разобрать PDF и не потерять смысл",
-      "status": "in_progress",
+      "status": "done",
       "taken_at": "2026-11-25T15:00:06",
       "slot": "midday",
       "day": "2026-11-25"
@@ -356,5 +356,5 @@
       "tag": "evergreen"
     }
   ],
-  "updated": "2026-11-25T15:00:06"
+  "updated": "2026-11-25T15:02:51"
 }
