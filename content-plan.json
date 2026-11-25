@@ -51,7 +51,10 @@
       "title": "Самозанятость: как оформить и что это меняет",
       "rubric": "rabota-i-dohod",
       "angle": "налоги, чеки, лимиты, когда переходить на ИП",
-      "status": "new"
+      "status": "in_progress",
+      "taken_at": "2026-11-25T05:00:05",
+      "slot": "morning",
+      "day": "2026-11-25"
     },
     {
       "slug": "nejroset-dlja-dokumentov",
@@ -350,5 +353,5 @@
       "tag": "evergreen"
     }
   ],
-  "updated": "2026-11-24T20:02:59"
+  "updated": "2026-11-25T05:00:05"
 }
