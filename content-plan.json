@@ -84,7 +84,10 @@
       "title": "Расход топлива вырос: 8 причин и что проверить",
       "rubric": "karta-i-put",
       "angle": "от шин до датчиков, с ценами",
-      "status": "new"
+      "status": "in_progress",
+      "taken_at": "2026-11-26T20:00:17",
+      "slot": "evening",
+      "day": "2026-11-26"
     },
     {
       "slug": "kak-ne-vygoret-na-udalenke",
@@ -365,5 +368,5 @@
       "tag": "evergreen"
     }
   ],
-  "updated": "2026-11-26T15:02:17"
+  "updated": "2026-11-26T20:00:17"
 }
