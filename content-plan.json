@@ -95,7 +95,10 @@
       "title": "7 бесплатных ИИ-сервисов, которые реально полезны",
       "rubric": "ii-instrumenty",
       "angle": "что дает бесплатный тариф и где ловушка",
-      "status": "new"
+      "status": "in_progress",
+      "taken_at": "2026-11-26T05:00:05",
+      "slot": "morning",
+      "day": "2026-11-26"
     },
     {
       "slug": "hranenie-veshhej-sistema",
@@ -359,5 +362,5 @@
       "tag": "evergreen"
     }
   ],
-  "updated": "2026-11-25T20:02:10"
+  "updated": "2026-11-26T05:00:05"
 }
