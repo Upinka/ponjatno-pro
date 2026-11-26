@@ -84,7 +84,7 @@
       "title": "Расход топлива вырос: 8 причин и что проверить",
       "rubric": "karta-i-put",
       "angle": "от шин до датчиков, с ценами",
-      "status": "in_progress",
+      "status": "done",
       "taken_at": "2026-11-26T20:00:17",
       "slot": "evening",
       "day": "2026-11-26"
@@ -368,5 +368,5 @@
       "tag": "evergreen"
     }
   ],
-  "updated": "2026-11-26T20:00:17"
+  "updated": "2026-11-26T20:04:02"
 }
