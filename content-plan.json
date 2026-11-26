@@ -37,7 +37,10 @@
       "title": "Протечка в квартире: порядок действий за 10 минут",
       "rubric": "dom-i-byt",
       "angle": "перекрыть, снять на видео, кто платит",
-      "status": "new"
+      "status": "in_progress",
+      "taken_at": "2026-11-26T15:00:05",
+      "slot": "midday",
+      "day": "2026-11-26"
     },
     {
       "slug": "avtozimoj-progress",
@@ -95,7 +98,7 @@
       "title": "7 бесплатных ИИ-сервисов, которые реально полезны",
       "rubric": "ii-instrumenty",
       "angle": "что дает бесплатный тариф и где ловушка",
-      "status": "in_progress",
+      "status": "done",
       "taken_at": "2026-11-26T05:00:05",
       "slot": "morning",
       "day": "2026-11-26"
@@ -362,5 +365,5 @@
       "tag": "evergreen"
     }
   ],
-  "updated": "2026-11-26T05:00:05"
+  "updated": "2026-11-26T15:00:05"
 }
