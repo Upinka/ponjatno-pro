@@ -77,7 +77,10 @@
       "title": "Как читать договор аренды: 7 пунктов, которые важны",
       "rubric": "dom-i-byt",
       "angle": "залог, ремонт, расторжение, коммуналка",
-      "status": "new"
+      "status": "in_progress",
+      "taken_at": "2026-11-27T05:00:05",
+      "slot": "morning",
+      "day": "2026-11-27"
     },
     {
       "slug": "rashod-topliva-prichiny",
@@ -368,5 +371,5 @@
       "tag": "evergreen"
     }
   ],
-  "updated": "2026-11-26T20:04:02"
+  "updated": "2026-11-27T05:00:05"
 }
