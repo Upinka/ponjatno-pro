@@ -121,7 +121,10 @@
       "title": "Шины: когда менять и как хранить до следующего сезона",
       "rubric": "karta-i-put",
       "angle": "остаток протектора, маркировка, хранение",
-      "status": "new"
+      "status": "in_progress",
+      "taken_at": "2026-11-27T15:00:06",
+      "slot": "midday",
+      "day": "2026-11-27"
     },
     {
       "slug": "kak-prodat-veshhi-na-avito",
@@ -371,5 +374,5 @@
       "tag": "evergreen"
     }
   ],
-  "updated": "2026-11-27T05:02:23"
+  "updated": "2026-11-27T15:00:06"
 }
