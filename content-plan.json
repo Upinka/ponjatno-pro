@@ -306,8 +306,11 @@
       "title": "Как играть в GTA 6 без спойлеров: 6 правил",
       "rubric": "igry",
       "angle": "настройки соцсетей, стримы, случайные подсказки",
-      "status": "new",
-      "tag": "trend"
+      "status": "in_progress",
+      "tag": "trend",
+      "taken_at": "2026-11-27T20:00:07",
+      "slot": "evening",
+      "day": "2026-11-27"
     },
     {
       "slug": "igry-zimy-2026-relizy",
@@ -374,5 +377,5 @@
       "tag": "evergreen"
     }
   ],
-  "updated": "2026-11-27T15:02:40"
+  "updated": "2026-11-27T20:00:07"
 }
