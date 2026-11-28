@@ -152,7 +152,10 @@
       "title": "ОСАГО и КАСКО: как не купить лишнего",
       "rubric": "karta-i-put",
       "angle": "что реально покрывает и где переплата",
-      "status": "new"
+      "status": "in_progress",
+      "taken_at": "2026-11-28T05:00:06",
+      "slot": "morning",
+      "day": "2026-11-28"
     },
     {
       "slug": "kak-podnjat-cenu-bez-poteri-klientov",
@@ -377,5 +380,5 @@
       "tag": "evergreen"
     }
   ],
-  "updated": "2026-11-27T20:03:14"
+  "updated": "2026-11-28T05:00:06"
 }
