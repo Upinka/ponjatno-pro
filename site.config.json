@@ -44,8 +44,9 @@
   "index_limit": 12,
   "feed": {
     "path": "feed.xml",
-    "max_items": 50,
-    "window_days": 45,
+    "max_items": 20,
+    "window_days": 3,
+    "min_items": 10,
     "category": "native-draft"
   },
   "ads": {

@@ -550,10 +550,15 @@ def build(clean: bool = False) -> None:
 
     # --- RSS --------------------------------------------------------------
     feed_cfg = cfg["feed"]
-    window_days = int(feed_cfg.get("window_days", 45))
+    window_days = int(feed_cfg.get("window_days", 3))
+    min_items = int(feed_cfg.get("min_items", 10))
     since = datetime.now(MSK) - timedelta(days=window_days)
-    in_window = [a for a in articles if not a.feed_exclude and a.date >= since][
+    available = [a for a in articles if not a.feed_exclude]
+    in_window = [a for a in available if a.date >= since][
         : int(feed_cfg.get("max_items", 50))]
+    # Дзен требует минимум 10 при первой подаче: если в окне мало — добираем свежими
+    if len(in_window) < min_items:
+        in_window = available[:max(min_items, len(in_window))]
 
     items_xml = []
     for a in in_window:
