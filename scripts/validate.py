@@ -72,9 +72,14 @@ def check_feed() -> None:
         ok("Обязательные элементы channel на месте")
 
     items = channel.findall("item")
+    strict_min = CONFIG.get("feed", {}).get("strict_min_items", True)
     if len(items) < 10:
-        err("В ленте %d материалов, Дзен требует минимум 10 при первой подаче "
-            "(увеличьте feed.window_days или добавьте статьи)" % len(items))
+        message = ("В ленте %d материалов. Дзен требует минимум 10 при первой подаче — "
+                   "если лента уже подключена, это нормально" % len(items))
+        if strict_min:
+            err(message)
+        else:
+            warn(message)
     else:
         ok("Материалов в ленте: %d" % len(items))
 

@@ -47,6 +47,7 @@
     "max_items": 20,
     "window_days": 3,
     "min_items": 10,
+    "strict_min_items": false,
     "category": "native-draft"
   },
   "ads": {
