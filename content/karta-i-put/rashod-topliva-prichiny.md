@@ -7,6 +7,7 @@ author: Редакция «Понятно про»
 tags: авто, расход топлива, зимняя эксплуатация, экономия
 cover: rashod-topliva-prichiny.jpg
 status: published
+feed_exclude: true
 kind: article
 ---
 

@@ -7,6 +7,7 @@ author: Редакция «Понятно про»
 tags: работа, собеседование, зарплата, переговоры
 cover: kak-otvetit-na-vopros-o-zarplate-instrukciya.jpg
 status: published
+feed_exclude: true
 kind: instruction
 ---
 

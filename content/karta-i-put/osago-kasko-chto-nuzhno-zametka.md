@@ -7,6 +7,7 @@ author: Редакция «Понятно про»
 tags: авто, страхование, ОСАГО, КАСКО
 cover: osago-kasko-chto-nuzhno-zametka.jpg
 status: published
+feed_exclude: true
 kind: note
 ---
 

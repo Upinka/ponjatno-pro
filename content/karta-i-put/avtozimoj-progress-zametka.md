@@ -7,6 +7,7 @@ author: Редакция «Понятно про»
 tags: авто, зима, аккумулятор
 cover: avtozimoj-progress-zametka.jpg
 status: published
+feed_exclude: true
 kind: note
 ---
 

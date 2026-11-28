@@ -7,6 +7,7 @@ author: Редакция «Понятно про»
 tags: нейросети, документы, PDF, инструкция, договор
 cover: nejroset-dlja-dokumentov-instrukciya.jpg
 status: published
+feed_exclude: true
 kind: instruction
 ---
 

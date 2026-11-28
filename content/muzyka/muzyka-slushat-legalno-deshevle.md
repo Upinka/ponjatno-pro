@@ -7,6 +7,7 @@ author: Редакция «Понятно про»
 tags: музыка, подписки, экономия
 cover: muzyka-legalno.jpg
 status: published
+feed_exclude: true
 kind: instruction
 ---
 

@@ -7,6 +7,7 @@ author: Редакция «Понятно про»
 tags: музыка, продуктивность, фокус
 cover: muzyka-plejlist.jpg
 status: published
+feed_exclude: true
 kind: article
 ---
 

@@ -7,6 +7,7 @@ author: Редакция «Понятно про»
 tags: GTA6 PC Rockstar 2027
 cover: igry-07.jpg
 status: published
+feed_exclude: true
 kind: article
 ---
 

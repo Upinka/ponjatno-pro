@@ -7,6 +7,7 @@ author: Редакция «Понятно про»
 tags: ИИ, бесплатно, лимиты
 cover: besplatnye-ii-servisy-kotorye-stoit-probovat-zametka.jpg
 status: published
+feed_exclude: true
 kind: note
 ---
 

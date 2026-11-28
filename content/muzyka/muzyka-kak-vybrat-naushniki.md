@@ -7,6 +7,7 @@ author: Редакция «Понятно про»
 tags: музыка, наушники, техника
 cover: muzyka-naushniki.jpg
 status: published
+feed_exclude: true
 kind: instruction
 ---
 

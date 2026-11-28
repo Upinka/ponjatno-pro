@@ -7,6 +7,7 @@ author: Редакция «Понятно про»
 tags: музыка, винил, индустрия
 cover: muzyka-vinil.jpg
 status: published
+feed_exclude: true
 kind: article
 ---
 

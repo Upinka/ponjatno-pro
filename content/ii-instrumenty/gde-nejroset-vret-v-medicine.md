@@ -7,6 +7,7 @@ author: Редакция «Понятно про»
 tags: нейросети, здоровье, медицина, проверка
 cover: gde-nejroset-vret-v-medicine.jpg
 status: published
+feed_exclude: true
 kind: article
 ---
 

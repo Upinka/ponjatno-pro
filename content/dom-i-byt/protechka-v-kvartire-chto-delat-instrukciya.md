@@ -7,6 +7,7 @@ author: Редакция «Понятно про»
 tags: ЖКХ, протечка, залив, квартира
 cover: protechka-v-kvartire-chto-delat-instrukciya.jpg
 status: published
+feed_exclude: true
 kind: instruction
 ---
 

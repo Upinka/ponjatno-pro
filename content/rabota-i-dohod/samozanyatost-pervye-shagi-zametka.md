@@ -7,6 +7,7 @@ author: Редакция «Понятно про»
 tags: самозанятость, НПД, налоги, «Мой налог»
 cover: samozanyatost-pervye-shagi-zametka.jpg
 status: published
+feed_exclude: true
 kind: note
 ---
 

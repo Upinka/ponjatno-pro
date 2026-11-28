@@ -7,6 +7,7 @@ author: Редакция «Понятно про»
 tags: бытовая техника, покупки, экономия, чек-лист
 cover: chek-list-pered-pokupkoj-tehniki.jpg
 status: published
+feed_exclude: true
 kind: article
 ---
 

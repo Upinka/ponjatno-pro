@@ -7,6 +7,7 @@ author: Редакция «Понятно про»
 tags: GTA6 спойлеры соцсети Rockstar Leonida
 cover: gta-6-bez-spojlerov.jpg
 status: published
+feed_exclude: true
 kind: article
 ---
 

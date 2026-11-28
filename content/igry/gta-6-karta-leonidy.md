@@ -7,6 +7,7 @@ author: Редакция «Понятно про»
 tags: GTA6 Леонида карта ВайсСити
 cover: igry-06.jpg
 status: published
+feed_exclude: true
 kind: article
 ---
 

@@ -7,6 +7,7 @@ author: Редакция «Понятно про»
 tags: шины, протектор, зимняя резина, хранение шин
 cover: shiny-kogda-menjat-instrukciya.jpg
 status: published
+feed_exclude: true
 kind: instruction
 ---
 

@@ -7,6 +7,7 @@ author: Редакция «Понятно про»
 tags: GTA6, релиз, сохранения, Rockstar
 cover: gta-6-pervye-dni-chto-delat-zametka.jpg
 status: published
+feed_exclude: true
 kind: note
 ---
 

@@ -7,6 +7,7 @@ author: Редакция «Понятно про»
 tags: GTA6 GTAOnline мультиплеер Rockstar
 cover: igry-04.jpg
 status: published
+feed_exclude: true
 kind: article
 ---
 

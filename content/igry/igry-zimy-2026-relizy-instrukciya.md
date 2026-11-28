@@ -7,6 +7,7 @@ author: Редакция «Понятно про»
 tags: игры, релизы, Steam, зимняя распродажа
 cover: igry-zimy-2026-relizy-instrukciya.jpg
 status: published
+feed_exclude: true
 kind: instruction
 ---
 
