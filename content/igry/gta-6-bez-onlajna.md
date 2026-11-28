@@ -8,7 +8,7 @@ tags: GTA6 GTAOnline мультиплеер Rockstar
 cover: igry-04.jpg
 status: published
 feed_exclude: true
-kind: article
+kind: note
 ---
 
 Это самый обсуждаемый вопрос первых дней: где GTA Online для новой части? Ответ официальный и скупой — нигде. В описании игры в цифровых магазинах и в заявлениях Rockstar для IGN GTA VI называется single-player experience, а отдельного анонса онлайн-режима нет.

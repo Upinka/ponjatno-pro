@@ -8,7 +8,7 @@ tags: GTA6 PC Rockstar 2027
 cover: igry-07.jpg
 status: published
 feed_exclude: true
-kind: article
+kind: note
 ---
 
 Издание GamesBeat со ссылкой на четыре источника в индустрии сообщило, что PC-версия GTA 6 готовится к выпуску в первом квартале 2027 года. Если это так, разрыв с консольным релизом составит всего несколько месяцев — для Rockstar это необычно быстро.

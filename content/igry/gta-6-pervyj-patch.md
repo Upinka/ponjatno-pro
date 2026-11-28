@@ -7,7 +7,7 @@ author: Редакция «Понятно про»
 tags: GTA6 патч обновление Rockstar
 cover: igry-05.jpg
 status: published
-kind: article
+kind: note
 ---
 
 Патч вышел 23 ноября и оказался небольшим по объёму, но важным по содержанию. Rockstar перечислила исправления:

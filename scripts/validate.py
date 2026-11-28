@@ -189,12 +189,42 @@ def check_site() -> None:
         err("Домен содержит не-ASCII символы (IDN) — Дзен такие сайты не принимает")
 
 
+def check_quality_gate() -> None:
+    """Гейт качества: свежие статьи ниже порога блокируют публикацию."""
+    sys.path.insert(0, str(ROOT / "scripts"))
+    try:
+        import quality_check  # noqa: E402
+    except Exception as exc:  # noqa: BLE001
+        warn("проверка качества недоступна: %s" % exc)
+        return
+
+    from datetime import datetime, timedelta
+    import build  # noqa: E402
+
+    since = datetime.now(build.MSK) - timedelta(days=2)
+    fresh = [a for a in build.load_articles() if a.date >= since]
+    if not fresh:
+        return
+    bad = []
+    for a in fresh:
+        score, issues = quality_check.check(a)
+        if score < 65:
+            bad.append((score, a, issues))
+    if bad:
+        for score, a, issues in bad:
+            err("качество %d/100: %s — %s"
+                % (score, a.title[:50], "; ".join(msg for _, msg in issues[:3])))
+    else:
+        ok("качество свежих статей (%d): все выше порога 65" % len(fresh))
+
+
 def main() -> None:
     if hasattr(sys.stdout, "reconfigure"):
         sys.stdout.reconfigure(encoding="utf-8", errors="replace")
 
     check_feed()
     check_site()
+    check_quality_gate()
 
     for line in oks:
         print("  OK    " + line)
