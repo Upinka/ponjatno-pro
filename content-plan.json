@@ -152,7 +152,7 @@
       "title": "ОСАГО и КАСКО: как не купить лишнего",
       "rubric": "karta-i-put",
       "angle": "что реально покрывает и где переплата",
-      "status": "in_progress",
+      "status": "done",
       "taken_at": "2026-11-28T05:00:06",
       "slot": "morning",
       "day": "2026-11-28"
@@ -320,8 +320,11 @@
       "title": "Игры зимы 2026: главные релизы и на что смотреть",
       "rubric": "igry",
       "angle": "обзор без рейтингов и хайпа",
-      "status": "new",
-      "tag": "season"
+      "status": "in_progress",
+      "tag": "season",
+      "taken_at": "2026-11-28T15:00:06",
+      "slot": "midday",
+      "day": "2026-11-28"
     },
     {
       "slug": "kak-vybrat-igru-na-vyhodnye",
@@ -380,5 +383,5 @@
       "tag": "evergreen"
     }
   ],
-  "updated": "2026-11-28T05:00:06"
+  "updated": "2026-11-28T15:00:06"
 }
