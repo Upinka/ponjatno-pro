@@ -97,7 +97,10 @@
       "title": "Как не выгореть, работая из дома",
       "rubric": "rabota-i-dohod",
       "angle": "границы дня, место работы, признаки выгорания",
-      "status": "new"
+      "status": "in_progress",
+      "taken_at": "2026-11-28T20:00:09",
+      "slot": "evening",
+      "day": "2026-11-28"
     },
     {
       "slug": "besplatnye-ii-servisy-kotorye-stoit-probovat",
@@ -383,5 +386,5 @@
       "tag": "evergreen"
     }
   ],
-  "updated": "2026-11-28T15:05:41"
+  "updated": "2026-11-28T20:00:09"
 }
